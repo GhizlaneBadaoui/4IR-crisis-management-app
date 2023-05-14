@@ -1,0 +1,12 @@
+@relation messages_dangers_ecole
+
+@attribute message string
+@attribute class {GEI, GB, GMM, STPI, GM, LOGE}
+
+@data
+"il y a un incendie au département info",GEI
+"il y a un incendie au département STPI",STPI
+"il y a un incendie au département GB",GB
+"le département d'info est en feu",LOGE
+"je suis bloqué dans l'ascenseur",LOGE
+"l'ascenseur est bloqué au GEI",GEI
