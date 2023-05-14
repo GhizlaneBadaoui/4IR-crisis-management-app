@@ -1,0 +1,159 @@
+body{
+	background-image: url('../images/font.jpg');
+  background-size: cover; 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	font: 600 16px/18px 'Open Sans',sans-serif;
+}
+
+.wrap {
+  max-width: 600px;
+  min-height: 600px;  
+  backdrop-filter: blur(15px);
+  background-color: rgba(182, 182, 182, 0.2);  
+  padding: 30px;
+}
+
+button {
+  background: #E32518;
+  border:none;
+  padding:15px 20px;
+  border-radius:25px;
+  color: #fff;
+	display:block;
+  width: 170px;
+}
+
+*,:after,:before{
+	box-sizing:border-box
+}
+
+.clearfix:after,.clearfix:before{
+	content:'';
+	display:table
+}
+
+.clearfix:after{
+	clear:both;
+	display:block
+}
+
+
+.alerte {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.response-box {
+  padding:15px 20px;
+  min-width: 150px;
+  float: left;
+}
+
+.title {
+  font-size: 24px;
+  padding:15px 20px;
+  text-align: center;
+}
+
+.select {
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(230, 230, 230, 0.55);
+  display: block;
+  width: 100%;
+}
+
+.group {
+	margin-bottom:10px;
+	margin-top: 10px;
+}
+
+.label {
+	color:#fff;
+	font-size:12px;
+  display: block;
+  width: 100%;
+}
+
+.message {
+  resize: none;
+}
+/*.container {
+
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: center;
+  }
+  
+  form {
+    margin-top: 40px;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .notification {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+form{
+    width:60%;
+}
+  */

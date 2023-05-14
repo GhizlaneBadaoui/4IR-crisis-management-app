@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:600'-->
+      <link rel='stylesheet' href="css/alert-interface.css">
+      <script src="/webjars/jquery/jquery.min.js"></script>
+      <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+      <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+      <script src="/scripts.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <form class="alerte">
+        <div class="title">Envoyer une alerte</div>        
+
+        <div class="group">
+          <label class="label"> Type d'alerte</label>
+          <select class="select" id="title">
+            <option value=""> Choisir un type d'alerte </option>
+            <option value="alertElevator">Alerte d'ascenseur</option>
+            <option value="alertFire">Alerte d'incendie</option>
+            <option value="alert">Autre type d'alerte</option>
+          </select>
+        </div>
+
+        <div class="group">
+          <label class="label"> Où ?</label>
+          <select class="select" id="lieu">
+            <option value=""> Choisir un lieu </option>
+            <option value="GEI">GEI</option>
+            <option value="STPI">STPI</option>
+            <option value="GMM">GMM</option>
+          </select>
+        </div>
+        
+        <div class="group">
+          <label class="label">Message</label>
+          <textarea class="message" id="message" rows="20" cols="55" placeholder="Ecrire un message ... "></textarea>
+        </div>
+
+        <div class="response-box">
+          <button id="send">Envoyer</button>
+        </div>
+        <div class="response-box">
+          <button>Annuler</button>
+        </div>
+
+      </form>
+    </div>
+  </body>
+</html>
