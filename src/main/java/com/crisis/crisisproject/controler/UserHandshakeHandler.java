@@ -1,4 +1,4 @@
-package com.crisis.crisisproject;
+package com.crisis.crisisproject.controler;
 
 import com.sun.security.auth.UserPrincipal;
 import org.slf4j.Logger;

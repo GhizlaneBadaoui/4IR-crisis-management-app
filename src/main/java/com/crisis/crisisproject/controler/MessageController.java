@@ -1,5 +1,6 @@
-package com.crisis.crisisproject;
+package com.crisis.crisisproject.controler;
 
+import com.crisis.crisisproject.services.NotificationService;
 import com.crisis.crisisproject.model.Message;
 import com.crisis.crisisproject.model.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;

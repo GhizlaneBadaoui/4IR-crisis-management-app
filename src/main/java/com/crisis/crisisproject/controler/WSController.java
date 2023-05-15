@@ -1,6 +1,7 @@
-package com.crisis.crisisproject;
+package com.crisis.crisisproject.controler;
 
 import com.crisis.crisisproject.model.Message;
+import com.crisis.crisisproject.services.WSService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package com.crisis.crisisproject;
+package com.crisis.crisisproject.services;
 
 import com.crisis.crisisproject.model.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
