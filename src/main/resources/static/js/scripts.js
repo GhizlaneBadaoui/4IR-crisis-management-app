@@ -28,56 +28,28 @@ function getInfo(id){
 
 
 function checkPassword( emailUser,givenPassword){
- let API_URL = "http://localhost:8080";
 
-    fetch(API_URL+"/connexion",{
+    return fetch("http:/connexion/${password}/${email}//localhost:8080", {
         method: 'GET',
-        headers:{
-            'Content-Type':'application/json'
-        },
-        body: JSON.stringify({                 // Ici on crée un objet anonyme car avec le fetch on ne peut envoyer qu'une seule chose dans le body
-            Mail: emailUser,
-            Password: givenPassword
-
-
-        }),
-    }).then(function(response){
-
-        if(response.status == 200){
-            let myStorage = localStorage;
-            let Token = JSON.parse(response.body);
-            console.log(Token.Token);
-            myStorage.setItem(Token);
-            document.location.assign("http://127.0.0.1:5500/src/acceuilAdmin.html");
-
-        }
-        else if(response.status == 500){
-            alert("Internal serveur error");
-            return;
-
-        }
-        else if(response.status == 404){
-            alert("Wrong mail or password");
-            return;
-
-        }
-        else if(response.status == 401){
-            alert("Wrong mail or password");
-            return;
-
-        }
-
-    }).catch(function(error){
-        console.log(error);
-        alert("Internal servor issue");
+        headers: { 'Content-Type': 'application/json' },
     })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // Afficher la réponse du serveur dans la console
+            return data;
+        })
+        .catch(error => {
+            console.error(error);
+            return false;
+        });
+
 
 }
 
 function connect() {
     var socket = new SockJS('/our-websocket');
 
-    let Mail= getInfo("email");
+    let Username = getInfo("email");
     let Password = getInfo("password");
 
 
@@ -87,17 +59,10 @@ function connect() {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    if(!(checkPassword(Username,Password))){
+        alert("L'identifiant ou le mot de passe est incorrect");
+        return;
+    }
 
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
