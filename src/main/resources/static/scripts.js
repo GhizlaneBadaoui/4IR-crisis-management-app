@@ -29,7 +29,7 @@ function getInfo(id){
 }
 
 
-/*function checkPassword( emailUser,givenPassword){
+function checkPassword( emailUser,givenPassword){
 
 
     console.log("On va faire le fetch avec "+emailUser);
@@ -48,25 +48,11 @@ function getInfo(id){
         });
 
 
-}*/
-
-function connect() {
-   /* var socket = new SockJS('/our-websocket');
-
-    let Username = getInfo("email");
-    let Password = getInfo("password");
+}
 
 
-    if(Username =="" || Username == null || Password == "" || Password == null){
-        alert("No Username or Password has been write");
-        return;
-
-    }
-
-    if(!(checkPassword(Username,Password))){
-        alert("L'identifiant ou le mot de passe est incorrect");
-        return;
-    }*/
+function connect(){
+    var socket = new SockJS('/our-websocket');
 
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
@@ -90,6 +76,29 @@ function connect() {
             updateNotificationDisplay();
         });
     });
+
+
+}
+
+
+function login() {
+
+
+    let Username = getInfo("email");
+    let Password = getInfo("password");
+
+
+    if(Username =="" || Username == null || Password == "" || Password == null){
+        alert("No Username or Password has been write");
+        return;
+
+    }
+
+    if(!(checkPassword(Username,Password))){
+        alert("L'identifiant ou le mot de passe est incorrect");
+        return;
+    }
+
     window.location='alert-interface.html';
 
 }
