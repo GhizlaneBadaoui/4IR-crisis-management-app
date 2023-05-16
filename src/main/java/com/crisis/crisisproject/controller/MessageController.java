@@ -1,5 +1,6 @@
-package com.crisis.crisisproject;
+package com.crisis.crisisproject.controller;
 
+import com.crisis.crisisproject.service.NotificationService;
 import com.crisis.crisisproject.model.Message;
 import com.crisis.crisisproject.model.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,10 @@ public class MessageController {
     @MessageMapping("/message")
     @SendTo("/topic/messages")
     public ResponseMessage getMessage(final Message message) throws InterruptedException {
+        System.out.println("message reçu:"+message);
         Thread.sleep(1000);
-        notificationService.sendGlobalNotification();
+        //notificationService.sendGlobalNotification();
+        //System.out.println("message reçu:"+message);
         return new ResponseMessage(HtmlUtils.htmlEscape(message.getMessageContent()));
     }
 

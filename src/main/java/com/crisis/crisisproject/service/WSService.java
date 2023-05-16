@@ -1,6 +1,7 @@
-package com.crisis.crisisproject;
+package com.crisis.crisisproject.service;
 
 import com.crisis.crisisproject.model.ResponseMessage;
+import com.crisis.crisisproject.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
