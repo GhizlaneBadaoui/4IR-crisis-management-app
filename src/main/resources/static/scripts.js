@@ -22,14 +22,18 @@ function getInfo(id){
 
     let Info = document.getElementById(id).value;
 
+    console.log("from get info j'ai récupéré : "+Info);
+
     return Info;
 
 }
 
 
-function checkPassword( emailUser,givenPassword){
+/*function checkPassword( emailUser,givenPassword){
 
-    return fetch("http:/connexion/${password}/${email}//localhost:8080", {
+
+    console.log("On va faire le fetch avec "+emailUser);
+    return fetch("http:/connexion/${password}/${email}/localhost:8080", {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     })
@@ -44,10 +48,10 @@ function checkPassword( emailUser,givenPassword){
         });
 
 
-}
+}*/
 
 function connect() {
-    var socket = new SockJS('/our-websocket');
+   /* var socket = new SockJS('/our-websocket');
 
     let Username = getInfo("email");
     let Password = getInfo("password");
@@ -62,7 +66,7 @@ function connect() {
     if(!(checkPassword(Username,Password))){
         alert("L'identifiant ou le mot de passe est incorrect");
         return;
-    }
+    }*/
 
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
@@ -86,6 +90,7 @@ function connect() {
             updateNotificationDisplay();
         });
     });
+    window.location='alert-interface.html';
 
 }
 
