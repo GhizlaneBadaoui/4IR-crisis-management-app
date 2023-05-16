@@ -16,7 +16,7 @@ public class NotificationService {
 
     public void sendGlobalNotification() {
         ResponseMessage message = new ResponseMessage("Global Notification");
-
+        System.out.println("In sendGlobalNotification function");
         messagingTemplate.convertAndSend("/topic/global-notifications", message);
     }
 
