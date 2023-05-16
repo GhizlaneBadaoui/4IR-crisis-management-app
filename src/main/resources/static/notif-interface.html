@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>crisis app</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
+    <link href="css/notif-interface.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/scripts.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="Alerte">
+        <div class="label">Notification</div>
+        <div class="notification" id="notification"></div>
+
+        <div class="label">Etes vous en danger ?</div>
+
+        <div class="response-box">
+            <button onclick="onClickYes();">Oui</button>
+        </div>
+
+        <div class="response-box">
+            <button onclick="onClickNo();">Non</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

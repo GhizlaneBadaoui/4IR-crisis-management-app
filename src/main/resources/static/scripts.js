@@ -23,22 +23,22 @@ function connect() {
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
-        updateNotificationDisplay();
+        //updateNotificationDisplay();
         stompClient.subscribe('/topic/messages', function (message) {
             console.log("Rock and roll baby");
-            console.log("message received-->"+message.body);
-            showMessage(JSON.parse(message.body).content);
+            console.log("message received--> "+message.body);
+            showMessage(JSON.parse(message.body));
         });
 
- //       stompClient.subscribe('/user/topic/private-messages', function (message) {
+//        stompClient.subscribe('/user/topic/private-messages', function (message) {
 //         showMessage(JSON.parse(message.body).content);
 //        });
 //
- //       stompClient.subscribe('/topic/global-notifications', function (message) {
- //           console.log("Received it from global-notifications:"+message.body);
- //           notificationCount = notificationCount + 1;
- //           updateNotificationDisplay();
-  //      });
+//        stompClient.subscribe('/topic/global-notifications', function (message) {
+//            console.log("Received it from global-notifications:"+message.body);
+//            notificationCount = notificationCount + 1;
+//            updateNotificationDisplay();
+//        });
 //
 //        stompClient.subscribe('/user/topic/private-notifications', function (message) {
 //            notificationCount = notificationCount + 1;
@@ -55,13 +55,13 @@ function showMessage(message) {
         //permission n'a pas été garantie
         Notification.requestPermission().then(function (permission){
             if(permission=="granted"){
-            //permission accordée
-                afficherNotification("Alerte!",{body:message});
+                //permission accordée
+                afficherNotification("Alerte !! ", {body:"Type: "+message.alertType+ "\nDétail: " +message.content+ " \nLieu: " + message.location});
             }
         });
       }
       else if(Notification.permission==="granted"){
-        afficherNotification("Alerte!",{body:message});
+        afficherNotification("Alerte !! ", {body:"Type: "+message.alertType+ "\nDétail: " +message.content+ " \nLieu: " + message.location});
       }
 
     } else {
@@ -71,7 +71,9 @@ function showMessage(message) {
 
 function sendMessage() {
     console.log("sending message");
-    stompClient.send("/ws/message", {}, JSON.stringify({'messageContent': $("#message").val()}));
+    stompClient.send("/ws/message", {}, JSON.stringify({'messageContent': $("#message").val(),
+                                                         'location': $('#lieu :selected').text(),
+                                                         'alertType': $('#title :selected').text()}));
 }
 
 function sendPrivateMessage() {
@@ -92,6 +94,13 @@ function resetNotificationCount() {
     notificationCount = 0;
     updateNotificationDisplay();
 }
+
 function afficherNotification(titre,options){
-    var notification=new Notification(titre,options);
+    var notification = new Notification(titre,options);
+}
+
+function onClickYes() {
+}
+
+function onClickNo() {
 }

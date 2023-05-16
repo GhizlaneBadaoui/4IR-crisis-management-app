@@ -1,0 +1,73 @@
+body{
+	background-image: url('../images/font.jpg');
+  background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	font: 600 16px/18px 'Open Sans',sans-serif;
+}
+
+.wrap {
+  max-width: 600px;
+  min-height: 600px;
+  backdrop-filter: blur(15px);
+  background-color: rgba(182, 182, 182, 0.2);
+  padding: 30px;
+}
+
+.notification {
+  background-color: #fff;
+  min-height: 400px;
+  min-width: 400px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+button {
+  background: #E32518;
+  border:none;
+  padding:15px 20px;
+  border-radius:25px;
+  color: #fff;
+	display:block;
+  width: 170px;
+}
+
+*,:after,:before{
+	box-sizing:border-box
+}
+
+.clearfix:after,.clearfix:before{
+	content:'';
+	display:table
+}
+
+.clearfix:after{
+	clear:both;
+	display:block
+}
+
+.Alerte {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.response-box {
+  padding:15px 20px;
+  min-width: 150px;
+  float: left;
+}
+
+.label {
+  font-size: 24px;
+  padding:15px 20px;
+  text-align: center;
+}
