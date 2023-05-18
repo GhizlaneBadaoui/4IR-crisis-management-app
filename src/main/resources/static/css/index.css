@@ -1,13 +1,13 @@
-/*.html{
-  min-width:100%;
-  min-height:100%;
-}*/
-
 body{
   background-image: url('../images/font.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachement: fixed;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font:600 16px/18px 'Open Sans',sans-serif;
 }
 
@@ -45,8 +45,6 @@ a {
   margin-bottom: 18px;
   display:flex;
   position:relative;
-  /*background-size: cover;
-  background-image: url(../../images/insa.jpg);*/
 }
 
 .login-html{

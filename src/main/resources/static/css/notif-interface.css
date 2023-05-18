@@ -11,12 +11,27 @@ body{
 	font: 600 16px/18px 'Open Sans',sans-serif;
 }
 
-.wrap {
-  max-width: 600px;
-  min-height: 600px;
+.container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#column1, #column3 {
+  margin-top: 40px;
+  padding: 20px 30px 15px 40px;
+  min-width: 500px;
+  max-height: 700px;
   backdrop-filter: blur(15px);
   background-color: rgba(182, 182, 182, 0.2);
-  padding: 30px;
+}
+
+#column2 {
+    margin-top: 40px;
+    padding: 5px;
+    width: 1px;
 }
 
 .notification {
@@ -36,7 +51,7 @@ button {
   padding:15px 20px;
   border-radius:25px;
   color: #fff;
-	display:block;
+  display:block;
   width: 170px;
 }
 
@@ -54,7 +69,7 @@ button {
 	display:block
 }
 
-.Alerte {
+.alerte {
   content: "";
   display: table;
   clear: both;
@@ -70,4 +85,61 @@ button {
   font-size: 24px;
   padding:15px 20px;
   text-align: center;
+}
+
+nav{
+    background: rgba(0, 1, 1, 0.5);
+    padding: 0.5em 0;
+    position: fixed;
+    z-index: 5;
+    text-align: right;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+nav  a{
+    padding: 0.5em 1em;
+    color: #fff;
+    font-size: smaller;
+    border-left-style: solid;
+}
+
+button:hover{
+    background: rgba(230, 230, 230, 0.55);
+}
+
+nav  a:hover{
+    background: #E32518;
+}
+
+table {
+	width:100%;
+	border:1px solid #EEEEEE;
+	text-align:center;
+	margin-top: 5px;
+}
+
+th {
+	width: 100%;
+	background: #E32518;
+	padding: 8px 0;
+	color: #fff;
+	font-size:13px;
+}
+
+tr {
+	display:flex;
+	width:100%;
+	padding:6px 0;
+	font-size:12px;
+}
+
+td{
+	flex: 1 1 20%;
+}
+
+#message-history {
+   overflow-x:auto;
+   height: 540px;
 }
