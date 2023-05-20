@@ -1,12 +1,16 @@
 package com.crisis.crisisproject.model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-import java.sql.Timestamp;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
+
+@Entity
+@Table(name="Notification")
 public class Notification {
 
     public  String contenuAlerte;
@@ -18,13 +22,13 @@ public class Notification {
 
     private Timestamp timestamp;
 
-    public String emailSender;
+    public String senderNotif;
 
     public Notification(){}
 
 
     public Notification(String emailSender,String lieuAlerte, String typeAlerte , String contenueAlert){
-        this.emailSender = emailSender;
+        this.senderNotif = emailSender;
         this.contenuAlerte = contenueAlert;
         this.typeAlerte = typeAlerte;
         this.lieuAlerte = lieuAlerte;
@@ -79,11 +83,11 @@ public class Notification {
 
     @Id
     @Column(name = "senderNotif")
-    public String getEmailSender() {
-        return emailSender;
+    public String getSenderNotif() {
+        return senderNotif;
     }
 
-    public void setEmailSender(String emailSender) {
-        this.emailSender = emailSender;
+    public void setSenderNotif(String emailSender) {
+        this.senderNotif = emailSender;
     }
 }

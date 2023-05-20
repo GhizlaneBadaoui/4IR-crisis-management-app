@@ -62,7 +62,7 @@ public class NotificationDMManager {
     public static  List<Notification> getListNotifForUser(String emailUser) {
 
         Session session = Hibernate.getSessionFactory().openSession();
-        String hql = "FROM Utilisateur  WHERE email = :id";
+        String hql = "FROM Notification  WHERE senderNotif = :id";
         List<Notification> listNotifFromDB = null;
 
 
