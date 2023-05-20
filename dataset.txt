@@ -1,0 +1,30 @@
+
+
+
+
+@relation messages_dangers_ecole
+
+@attribute message string
+@attribute dept {GEI,GB,GMM,STPI,GM,LOGE}
+
+@data
+'département GEI',GEI
+'GEI',GEI
+'département info',GEI
+'info',GEI
+'departement STPI',STPI
+'STPI',STPI
+'Riquet',STPI
+'Fourrier',STPI
+'département GB',GB
+'biologie',GB
+'chimie',GB
+'GB',GB
+'département GMM',GMM
+'GMM',GMM
+'Mathematique',GMM
+'Modelisation',GMM
+'LOGE',LOGE
+'ascenseur',LOGE
+'bloqué',LOGE
+'coince',LOGE
