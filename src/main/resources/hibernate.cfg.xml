@@ -13,6 +13,7 @@
         <property name="show_sql">true</property>
         <property name="generate_statistics">false</property>
         <mapping  class="com.crisis.crisisproject.model.Utilisateur"/>
+        <mapping  class="com.crisis.crisisproject.model.Notification"/>
 
 
 
