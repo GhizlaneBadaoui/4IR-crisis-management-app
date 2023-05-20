@@ -1,47 +1,6 @@
 var stompClient = null;
 var responseCount = 0;
 
-$(document).ready(function() {
-    console.log("app page is ready");
-    connect();
-
-    $("#send").click(function() {
-        sendMessage();
-    });
-
-    $("#cancel").click(function() {
-       $('#alertType :selected').text() = "";
-       $('#content :selected').text() = "";
-       $('#location :selected').text() = "";
-    });
-});
-
-function connect() {
-    var socket = new SockJS('/our-websocket');
-    stompClient = Stomp.over(socket);
-    stompClient.connect({}, function (frame) {
-        console.log('Connected: ' + frame);
-
-        stompClient.subscribe('/topic/messages', function (message) {
-            console.log("Rock and roll baby");
-            console.log("message received--> "+message.body);
-            showMessage(JSON.parse(message.body));
-        });
-
-//        stompClient.subscribe('/user/topic/private-messages', function (message) {
-//         showMessage(JSON.parse(message.body).content);
-//        });
-//
-//        stompClient.subscribe('/topic/global-notifications', function (message) {
-//            console.log("Received it from global-notifications:"+message.body);
-//            updateNotificationDisplay();
-//        });
-//
-//        stompClient.subscribe('/user/topic/private-notifications', function (message) {
-//            updateNotificationDisplay();
-//        });
-    });
-}
 
 function showMessage(message) {
     $("#messages").append("<tr>"
