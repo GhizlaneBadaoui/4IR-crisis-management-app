@@ -1,14 +1,14 @@
 body{
-  background-image: url('../images/font.jpg');
-  background-size: cover; 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+	background-image: url('../images/font.jpg');
+  background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
   height: 100%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  font: 600 16px/18px 'Open Sans',sans-serif;
+	font: 600 16px/18px 'Open Sans',sans-serif;
 }
 
 .container {
@@ -32,6 +32,17 @@ body{
     margin-top: 40px;
     padding: 5px;
     width: 1px;
+}
+
+.notification {
+  background-color: #fff;
+  min-height: 400px;
+  min-width: 400px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  padding: 15px;
 }
 
 button {
@@ -58,7 +69,6 @@ button {
 	display:block
 }
 
-
 .alerte {
   content: "";
   display: table;
@@ -71,35 +81,10 @@ button {
   float: left;
 }
 
-.title {
+.label {
   font-size: 24px;
   padding:15px 20px;
   text-align: center;
-}
-
-.select {
-  border:none;
-  padding:15px 20px;
-  border-radius:25px;
-  background:rgba(230, 230, 230, 0.55);
-  display: block;
-  width: 95%;
-}
-
-.group {
-	margin-bottom:10px;
-	margin-top: 10px;
-}
-
-.label {
-  color:#fff;
-  font-size:12px;
-  display: block;
-  width: 100%;
-}
-
-.message {
-  resize: none;
 }
 
 nav{
@@ -128,12 +113,11 @@ nav  a:hover{
     background: #E32518;
 }
 
-
 table {
 	width:100%;
 	border:1px solid #EEEEEE;
 	text-align:center;
-	margin-top: 20px;
+	margin-top: 5px;
 }
 
 th {

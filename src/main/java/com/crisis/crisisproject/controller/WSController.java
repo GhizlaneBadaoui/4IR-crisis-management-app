@@ -16,12 +16,12 @@ public class WSController {
 
     @PostMapping("/send-message")
     public void sendMessage(@RequestBody final Message message) {
-        service.notifyFrontend(message.getMessageContent());
+        service.notifyFrontend(message.getMessageContent(), message.getLocation(), message.getAlertType());
     }
 
     @PostMapping("/send-private-message/{id}")
     public void sendPrivateMessage(@PathVariable final String id,
                                    @RequestBody final Message message) {
-        service.notifyUser(id, message.getMessageContent());
+        service.notifyUser(id, message.getMessageContent(), message.getLocation(), message.getAlertType());
     }
 }
