@@ -115,6 +115,7 @@ async function login(){
         alert("Connexion");
         window.location='alert-interface.html';
         connect();
+        localStorage.setItem('emailSender',Username);
         return;
     }
     else{

@@ -50,6 +50,7 @@ public class UserManagementService {
 
         if ((realPasswordUser != null) && (password.equals(realPasswordUser))) {
             answer = true;
+            userFromDB.addUserToConnectedList();
         }
 
         System.out.println(" email : "+email+" password : "+password);

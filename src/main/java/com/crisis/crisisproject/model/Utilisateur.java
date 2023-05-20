@@ -1,5 +1,6 @@
 package com.crisis.crisisproject.model;
 
+import com.crisis.crisisproject.CrisisProjectApplication;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -25,6 +26,26 @@ public class Utilisateur {
 
     private  String role;
 
+
+    public void addUserToConnectedList(){
+        if(CrisisProjectApplication.listUtilisateurConnected != null){
+            CrisisProjectApplication.listUtilisateurConnected.add(this);
+        }
+        else{
+            System.out.println("La liste n'est pas initialisé");
+        }
+
+    }
+
+    public void removeUserFromConnectedList(){
+        if(CrisisProjectApplication.listUtilisateurConnected != null){
+            CrisisProjectApplication.listUtilisateurConnected.remove(this);
+        }
+        else{
+            System.out.println("La liste n'est pas initialisé");
+        }
+
+    }
 
 
     //Pour créer un Utilisateur sans attributs initialisés
