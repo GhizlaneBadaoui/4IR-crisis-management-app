@@ -114,7 +114,6 @@ async function login(){
     if(response){
         alert("Connexion");
         localStorage.setItem('emailSender',Username);
-        connect();
         window.location='alert-interface.html';
         return;
     }
@@ -126,34 +125,7 @@ async function login(){
 
 }
 
-function connect() {
-    var socket = new SockJS('/our-websocket');
-    stompClient = Stomp.over(socket);
-    stompClient.connect({}, function (frame) {
-        console.log('Connected: ' + frame);
-        updateNotificationDisplay();
-        stompClient.subscribe('/topic/messages', function (message) {
-            console.log("Rock and roll baby");
-            console.log("message received-->"+message.body);
-            showMessage(JSON.parse(message.body).content);
-        });
 
- //       stompClient.subscribe('/user/topic/private-messages', function (message) {
-//         showMessage(JSON.parse(message.body).content);
-//        });
-//
- //       stompClient.subscribe('/topic/global-notifications', function (message) {
- //           console.log("Received it from global-notifications:"+message.body);
- //           notificationCount = notificationCount + 1;
- //           updateNotificationDisplay();
-  //      });
-//
-//        stompClient.subscribe('/user/topic/private-notifications', function (message) {
-//            notificationCount = notificationCount + 1;
-//            updateNotificationDisplay();
-//        });
-    });
-}
 
 function showMessage(message) {
     $("#messages").append("<tr><td>" + message + "</td></tr>");
