@@ -19,6 +19,20 @@ $(document).ready(function() {
    });
 });
 
+function updateNotificationDisplay() {
+    if (notificationCount == 0) {
+        $('#notifications').hide();
+    } else {
+        $('#notifications').show();
+        $('#notifications').text(notificationCount);
+    }
+}
+
+function resetNotificationCount() {
+    notificationCount = 0;
+    updateNotificationDisplay();
+}
+
 function connect() {
     console.log("lets connect to web socket")
     var socket = new SockJS('/our-websocket');
@@ -86,10 +100,10 @@ function sendMessage() {
                                                          'alertType': $('#alertType :selected').text()}));
 }
 
-//function sendPrivateMessage() {
-//    console.log("sending private message");
-//    stompClient.send("/ws/private-message", {}, JSON.stringify({'messageContent': $("#private-message").val()}));
-//}
+function sendPrivateMessage() {
+    console.log("sending private message");
+    stompClient.send("/ws/private-message", {}, JSON.stringify({'messageContent': $("#private-message").val()}));
+}
 
 function afficherNotification(titre,options){
     var notification = new Notification(titre,options);
