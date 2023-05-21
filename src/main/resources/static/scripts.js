@@ -113,9 +113,9 @@ async function login(){
     console.log("La reponse du fetch est : "+response);
     if(response){
         alert("Connexion");
-        window.location='alert-interface.html';
-        connect();
         localStorage.setItem('emailSender',Username);
+        connect();
+        window.location='alert-interface.html';
         return;
     }
     else{
