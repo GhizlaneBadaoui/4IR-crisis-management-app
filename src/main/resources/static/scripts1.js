@@ -10,16 +10,17 @@ $(document).ready(function() {
         sendMessage();
     });
 
-//    $("#send-private").click(function() {
-//        sendPrivateMessage();
-//    });
-//
-//    $("#notifications").click(function() {
-//        resetNotificationCount();
-//    });
+  $("#send-private").click(function() {
+       sendPrivateMessage();
+  });
+
+    $("#notifications").click(function() {
+        resetNotificationCount();
+   });
 });
 
 function connect() {
+    console.log("lets connect to web socket")
     var socket = new SockJS('/our-websocket');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
@@ -46,6 +47,7 @@ function connect() {
 //            updateNotificationDisplay();
 //        });
     });
+    console.log("end of connection function")
 }
 
 
