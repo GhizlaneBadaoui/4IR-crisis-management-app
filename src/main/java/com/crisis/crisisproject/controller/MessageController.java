@@ -1,5 +1,7 @@
 package com.crisis.crisisproject.controller;
 
+import com.crisis.crisisproject.model.DecisionTree;
+import com.crisis.crisisproject.model.ResponseAlert;
 import com.crisis.crisisproject.service.NotificationService;
 import com.crisis.crisisproject.model.Message;
 import com.crisis.crisisproject.model.ResponseMessage;
@@ -19,25 +21,30 @@ public class MessageController {
 
     @MessageMapping("/message")
     @SendTo("/topic/messages")
-    public ResponseMessage getMessage(final Message message) throws InterruptedException {
+    public ResponseMessage getMessage(final Message message) throws Exception {
         System.out.println("message reçu:"+message.getMessageContent() + "--" + message.getLocation() + "--" + message.getAlertType());
         Thread.sleep(1000);
         //notificationService.sendGlobalNotification();
         //System.out.println("message reçu:"+message);
-        return new ResponseMessage(HtmlUtils.htmlEscape(message.getMessageContent()),
+        ResponseMessage responseMessage=new ResponseMessage(HtmlUtils.htmlEscape(message.getMessageContent()),
                 HtmlUtils.htmlEscape(message.getLocation()),
                 HtmlUtils.htmlEscape(message.getAlertType()));
+        //cas où le lieu n'a pas été choisi
+        String defaut=" Choisir un lieu ";
+        if(message.getLocation().equals(defaut)){
+            DecisionTree decisonTree=new DecisionTree();
+            responseMessage.setLocation(decisonTree.StringToWordVector(HtmlUtils.htmlEscape(message.getMessageContent())));
+        }
+        return responseMessage;
     }
 
     @MessageMapping("/private-message")
-    @SendToUser("/topic/private-messages")
-    public ResponseMessage getPrivateMessage(final Message message, final Principal principal) throws InterruptedException {
+    @SendTo("/topic/private-messages")
+    public ResponseAlert getPrivateMessage(final ResponseAlert response) throws InterruptedException {
         Thread.sleep(1000);
-        notificationService.sendPrivateNotification(principal.getName(), message.getMessageContent(), message.getLocation(), message.getAlertType());
-        return new ResponseMessage(HtmlUtils.htmlEscape(
-                "Sending private message to user " + principal.getName() + ": "
-                        + message.getMessageContent()), HtmlUtils.htmlEscape(message.getLocation()),
-                HtmlUtils.htmlEscape(message.getAlertType())
-        );
+        //notificationService.sendPrivateNotification(principal.getName(), message.getMessageContent(), message.getLocation(), message.getAlertType());
+        //System.out.println("le principal est:"+principal.toString());
+        System.out.println("message reçu de "+response.getSender()+" qui dit qu'il est "+response.getResponse());
+        return response;
     }
 }

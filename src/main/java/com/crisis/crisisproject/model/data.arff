@@ -1,0 +1,81 @@
+@relation messages_dangers_ecole
+
+@attribute message string
+@attribute dept {GEI,GB,GMM,STPI,GM,LOGE}
+
+@data
+'département GEI',GEI
+'GEI',GEI
+'info',GEI
+'departement STPI',STPI
+'STPI',STPI
+'Riquet',STPI
+'Fourrier',STPI
+'département GB',GB
+'biologie',GB
+'chimie',GB
+'GB',GB
+'département GMM',GMM
+'GMM',GMM
+'Mathematique',GMM
+'Modelisation',GMM
+'LOGE',LOGE
+'ascenseur',LOGE
+'bloqué',LOGE
+'coince',LOGE
+"département info",GEI
+"un incendie au département info",GEI
+"le département info est en feu",GEI
+"bâtiment informatique",GEI
+"un incendie au bâtiment informatique",GEI
+"le bâtiment informatique est en feu",GEI
+"département STPI",STPI
+"un incendie au département STPI",STPI
+"le département STPI est en feu",STPI
+"bâtiment commun",STPI
+"un incendie au bâtiment commun",STPI
+"le bâtiment commun est en feu",STPI
+"département GB",GB
+"un incendie au département GB",GB
+"le département GB est en feu",GB
+"génie biologie",GB
+"un incendie au génie biologie",GB
+"le génie biologie est en feu",GB
+"département GMM",GMM
+"un incendie au département GMM",GMM
+"le département GMM est en feu",GMM
+"génie mécanique",GMM
+"un incendie au génie mécanique",GMM
+"le génie mécanique est en feu",GMM
+"accueil du campus",LOGE
+"je suis bloqué dans l accueil du campus",LOGE
+"l accueil du campus est bloqué",LOGE
+"ascenseur",LOGE
+"je suis bloqué dans l'ascenseur",LOGE
+"l'ascenseur est bloqué",LOGE
+"incendie dans le département info",GEI
+"fuite de gaz au département info",GEI
+"problème électrique dans le département info",GEI
+"urgence médicale au département info",GEI
+"feu dans le bâtiment info",GEI
+"incident de sécurité dans le bâtiment info",GEI
+"alarme incendie dans le bâtiment info",GEI
+"fuite d'eau dans le département info",GEI
+"incendie dans le bâtiment GB",GB
+"fuite de gaz au bâtiment GB",GB
+"problème électrique dans le bâtiment GB",GB
+"urgence médicale au bâtiment GB",GB
+"feu dans le département GB",GB
+"incident de sécurité dans le département GB",GB
+"alarme incendie dans le bâtiment GB",GB
+"fuite d'eau dans le département GB",GB
+"incendie dans le département GMM",GMM
+"fuite de gaz au département GMM",GMM
+"problème électrique dans le département GMM",GMM
+"urgence médicale au département GMM",GMM
+"feu dans le bâtiment GMM",GMM
+"incident de sécurité dans le bâtiment GMM",GMM
+"alarme incendie dans le bâtiment GMM",GMM
+"fuite d'eau dans le département GMM",GMM
+"problème de sécurité dans le bâtiment commun",STPI
+
