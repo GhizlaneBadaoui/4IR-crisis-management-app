@@ -1,6 +1,6 @@
 var stompClient = null;
 var responseCount = 0;
-
+var notificationCount=0;
 
 $(document).ready(function() {
     console.log("app page is ready");
@@ -43,7 +43,7 @@ function connect() {
         stompClient.subscribe('/topic/messages', function (message) {
             console.log("Rock and roll baby");
             console.log("message received-->"+message.body);
-            showMessage(JSON.parse(message.body).content);
+            showMessage(JSON.parse(message.body));
         });
 
         //       stompClient.subscribe('/user/topic/private-messages', function (message) {
