@@ -11,20 +11,11 @@ import java.net.SocketException;
 @Entity
 @Table(name="Utilisateur")
 public class Utilisateur {
-
-
     private String fullName;
-
-
     public String email;
-
     private String passWord;
-
     private Boolean userSafe;
-
-
     private  String role;
-
 
 
     //Pour créer un Utilisateur sans attributs initialisés
@@ -35,7 +26,6 @@ public class Utilisateur {
         this.fullName = fullName;
     }
 
-
     //Pour créer une instance d'utilisateur quand on voudra récupérér un Utilisateur depuis la base de données
     public Utilisateur(String email , String passWord) {
         super();
@@ -43,7 +33,6 @@ public class Utilisateur {
         this.passWord = passWord;
 
     }
-
 
     //Constructeur pour Créer une nouvelle instance de Utilisateur afin de rajouter dans la BD
     public Utilisateur(String fullName,String email,String password,String role) throws SocketException {
