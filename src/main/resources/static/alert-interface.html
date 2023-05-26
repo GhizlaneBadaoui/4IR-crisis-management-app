@@ -25,7 +25,7 @@
 
           <div class="group">
             <label class="label"> Type d'alerte</label>
-            <select class="select" id="alertType">
+            <select class="select" id="alertType" required>
               <option value=""> Choisir un type d'alerte </option>
               <option value="alertElevator">Alerte ascenseur</option>
               <option value="alertFire">Alerte incendie</option>
@@ -45,7 +45,7 @@
 
           <div class="group">
             <label class="label">Message</label>
-            <textarea class="message" id="content" rows="20" cols="55" placeholder="Ecrire un message ... "></textarea>
+            <textarea class="message" id="content" rows="20" cols="55" placeholder="Ecrire un message ... " required></textarea>
           </div>
 
           <div class="response-box">
@@ -71,9 +71,7 @@
         </table>
         <div id="message-history">
           <table>
-          <tbody id="messages">
-          </tbody>
-        </table>
+          </table>
         </div>
       </div>
     </div>

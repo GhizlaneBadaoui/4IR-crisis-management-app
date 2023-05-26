@@ -27,19 +27,6 @@ function connect() {
             console.log("message received--> "+message.body);
             showMessage(JSON.parse(message.body));
         });
-
-//        stompClient.subscribe('/user/topic/private-messages', function (message) {
-//         showMessage(JSON.parse(message.body).content);
-//        });
-//
-//        stompClient.subscribe('/topic/global-notifications', function (message) {
-//            console.log("Received it from global-notifications:"+message.body);
-//            updateNotificationDisplay();
-//        });
-//
-//        stompClient.subscribe('/user/topic/private-notifications', function (message) {
-//            updateNotificationDisplay();
-//        });
     });
 }
 
@@ -58,7 +45,7 @@ function showMessage(message) {
         Notification.requestPermission().then(function (permission){
             if(permission=="granted"){
                 //permission accordée
-                afficherNotification("Alerte !! ", {body:"Type: "+message.alertType+ "\nDétail: " +message.content+ " \nLieu: " + message.location});
+                afficherNotification("🚨 Alerte ! ", {body:"Type: "+message.alertType+ "\nDétail: " +message.content+ " \nLieu: " + message.location});
             }
         });
       }
@@ -73,15 +60,16 @@ function showMessage(message) {
 
 function sendMessage() {
     console.log("sending message");
-    stompClient.send("/ws/message", {}, JSON.stringify({'messageContent': $("#content").val(),
-                                                         'location': $('#location :selected').text(),
-                                                         'alertType': $('#alertType :selected').text()}));
-}
 
-//function sendPrivateMessage() {
-//    console.log("sending private message");
-//    stompClient.send("/ws/private-message", {}, JSON.stringify({'messageContent': $("#private-message").val()}));
-//}
+    var content = $("#content").val();
+    var type = $('#alertType :selected').text();
+
+    if (content != "" && type != "") {
+        stompClient.send("/ws/message", {}, JSON.stringify({'messageContent': content,
+                                                                     'location': "indetermine",
+                                                                     'alertType': type}));
+    }
+}
 
 function afficherNotification(titre,options){
     var notification = new Notification(titre,options);

@@ -1,5 +1,6 @@
 package com.crisis.crisisproject.controller;
 
+import com.crisis.crisisproject.model.DecisionTree;
 import com.crisis.crisisproject.service.NotificationService;
 import com.crisis.crisisproject.model.Message;
 import com.crisis.crisisproject.model.ResponseMessage;
@@ -19,14 +20,22 @@ public class MessageController {
 
     @MessageMapping("/message")
     @SendTo("/topic/messages")
-    public ResponseMessage getMessage(final Message message) throws InterruptedException {
+    public ResponseMessage getMessage(final Message message) throws Exception {
         System.out.println("message reçu:"+message.getMessageContent() + "--" + message.getLocation() + "--" + message.getAlertType());
         Thread.sleep(1000);
         //notificationService.sendGlobalNotification();
         //System.out.println("message reçu:"+message);
-        return new ResponseMessage(HtmlUtils.htmlEscape(message.getMessageContent()),
+
+//        return new ResponseMessage(HtmlUtils.htmlEscape(message.getMessageContent()),
+//         HtmlUtils.htmlEscape(message.getLocation()),
+//         HtmlUtils.htmlEscape(message.getAlertType()));
+
+        DecisionTree decisonTree=new DecisionTree();
+        ResponseMessage responseMessage=new ResponseMessage(HtmlUtils.htmlEscape(message.getMessageContent()),
                 HtmlUtils.htmlEscape(message.getLocation()),
                 HtmlUtils.htmlEscape(message.getAlertType()));
+        responseMessage.setLocation(decisonTree.StringToWordVector(HtmlUtils.htmlEscape(message.getMessageContent())));
+        return responseMessage;
     }
 
     @MessageMapping("/private-message")
