@@ -23,12 +23,12 @@
             <div class="sign-in-htm">
                 <div class="group">
                     <label class="label">Email </label>
-                    <input id="email" type="text" class="input" name="email"> <!-- récupérer email par "email"-->
+                    <input id="email" type="text" class="input" name="email" required="required"> <!-- récupérer email par "email"-->
                 </div>
 
                 <div class="group">
                     <label class="label">Mot de passe </label>
-                    <input id="password" type="password" class="input" data-type="password"> <!-- récupérer mot de passe par "password"-->
+                    <input id="password" type="password" class="input" data-type="password" required="required"> <!-- récupérer mot de passe par "password"-->
                 </div>
 
                 <div class="group">
@@ -47,22 +47,22 @@
             <div class="sign-up-htm">
                 <div class="group">
                     <label class="label"> Nom complet </label>
-                    <input id="fullName" type="text" class="input"> <!-- récupérer nom complet par "fullName"-->
+                    <input id="fullName" type="text" class="input" required="required"> <!-- récupérer nom complet par "fullName"-->
                 </div>
                 <div class="group">
                     <label class="label"> Mot de passe </label>
-                    <input id="passwordInscription" type="password" class="input" data-type="password"> <!-- récupérer mot de passe par "password"-->
+                    <input id="passwordInscription" type="password" class="input" data-type="password" required="required"> <!-- récupérer mot de passe par "password"-->
                 </div>
                 <div class="group">
                     <label class="label"> Confirmer le mot de passe </label>
-                    <input id="checkPasswordInscription" type="password" class="input" data-type="password">
+                    <input id="checkPasswordInscription" type="password" class="input" data-type="password" required="required">
                 </div>
                 <div class="group">
                     <label class="label"> Email </label>
-                    <input id="emailInscription" type="text" class="input"> <!-- récupérer email par "email"-->
+                    <input id="emailInscription" type="text" class="input" required="required"> <!-- récupérer email par "email"-->
                 </div>
                 <div class="group">
-                    <select class="select" id="role">
+                    <select class="select" id="role" required>
                         <option value=""> Choisir une option </option>
                         <option value="student">Étudiant</option>
                         <option value="teacher">Professeur</option>

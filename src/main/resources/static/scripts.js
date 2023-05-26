@@ -3,19 +3,10 @@ var notificationCount = 0;
 
 $(document).ready(function() {
     console.log("app page is ready");
-   // connect();
 
     $("#send").click(function() {
         sendMessage();
     });
-
-//    $("#send-private").click(function() {
-//        sendPrivateMessage();
-//    });
-//
-//    $("#notifications").click(function() {
-//        resetNotificationCount();
-//    });
 });
 
 function getInfo(id){
@@ -27,43 +18,6 @@ function getInfo(id){
     return Info;
 
 }
-
-/*function checkPassword( emailUser,givenPassword){
-
-    let responseFunction;
-    console.log("On va faire le fetch avec "+emailUser);
-    fetch("http:/connexion/${password}/${email}/localhost:8080", {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-    })
-        .then(function(response){
-
-            if(response.status == 200){
-                console.log("on a une réponse du serveur ");
-                response.json().then(function(responseJSON){
-                    responseFunction = responseJSON;
-                })
-
-            }
-
-            if(response.status == 404){
-                console.log("Aucune réponse du serveur");
-                responseFunction = false;
-
-            }
-
-        })
-        .catch(error => {
-            console.log("On est dans erreur du fetch");
-            console.error(error);
-            responseFunction = false;
-        });
-
-    return responseFunction;
-
-
-}
- */
 
 function checkPassword(emailUser, givenPassword) {
     console.log("On va faire le fetch avec " + emailUser);
@@ -136,21 +90,6 @@ function connect() {
             console.log("message received-->"+message.body);
             showMessage(JSON.parse(message.body).content);
         });
-
- //       stompClient.subscribe('/user/topic/private-messages', function (message) {
-//         showMessage(JSON.parse(message.body).content);
-//        });
-//
- //       stompClient.subscribe('/topic/global-notifications', function (message) {
- //           console.log("Received it from global-notifications:"+message.body);
- //           notificationCount = notificationCount + 1;
- //           updateNotificationDisplay();
-  //      });
-//
-//        stompClient.subscribe('/user/topic/private-notifications', function (message) {
-//            notificationCount = notificationCount + 1;
-//            updateNotificationDisplay();
-//        });
     });
 }
 
