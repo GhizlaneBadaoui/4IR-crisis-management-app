@@ -9,7 +9,7 @@ into a user-friendly format.
 - `The Application Tier` :  ’Back end’ of the project, serving as the heart of the application, this tier coordinates and controls the system. This tier shuttles and processes data between the two other tiers.
 - `The Data Tier` : This final layer is dedicated to data persistence, where it stores and retrieves information from a database.
 
-## Exécution:
+## Execution:
 - Once the application is running, you can access it on the Spring Boot server at `[http://localhost:8080]` using your web browser.
 - The code to be executed is in the `main` branch.
 - The login credentials for accessing the application are as follows: the email is `test` and the password is `123`. 
