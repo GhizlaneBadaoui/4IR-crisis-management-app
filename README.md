@@ -11,6 +11,7 @@ into a user-friendly format.
 
 ## Exécution:
 - Once the application is running, you can access it on the Spring Boot server at `[http://localhost:8080]` using your web browser.
+- The code to be executed is in the `main` branch.
 - The login credentials for accessing the application are as follows: the email is `test` and the password is `123`. 
 
 `NB : The connection to the database is established successfully using the INSA server.` 
