@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://srv-bdens.insa-toulouse.fr:3306/projet_gei_001</property>
+        <property name="connection.username">projet_gei_001</property>
+        <property name="connection.password">ahphahM3</property>
+        <property name="show_sql">true</property>
+        <property name="generate_statistics">false</property>
+        <mapping  class="com.crisis.crisisproject.model.Utilisateur"/>
+
+
+
+    </session-factory>
+
+</hibernate-configuration>
